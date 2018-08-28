@@ -1,0 +1,41 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code Plugin\n\n"
+  numExecutors: 5
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+  # securityRealm:
+  #   github:
+  #     githubWebUri: "https://github.com"
+  #     githubApiUri: "https://api.github.com"
+  #     clientID: "client-id"
+  #     clientSecret: "client-secret"
+  #     oauthScopes: "read:org,user:email"
+  # nodes:
+  #   slave:
+  #     name: "static-slave"
+  #     remoteFS: "/home/jenkins"
+  #     launcher: "jnlp"
+  # slaveAgentPort: 50000
+  # agentProtocols:
+  #   - "jnlp2"
+# tool:
+#   git:
+#     installations:
+#       - name: git
+#         home: /usr/local/bin/git
+# unclassified:
+#   mailer:
+#     adminAddress: admin@acme.org
+#     replyToAddress: do-not-reply@acme.org
+#     smtpHost: smtp.acme.org
+#     smtpPort: 4441
+# credentials:
+#   system:
+#     domainCredentials:
+#       credentials:
+#         - certificate:
+#             scope:    SYSTEM
+#             id:       ssh_private_key
+#             keyStoreSource:
+#               fileOnMaster:
+#                 keyStoreFile: /docker/secret/id_rsa
