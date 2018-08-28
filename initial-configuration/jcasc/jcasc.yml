@@ -7,8 +7,8 @@ jenkins:
     github:
       githubWebUri: "https://github.com"
       githubApiUri: "https://api.github.com"
-      clientID: ${jenkins-client-id}
-      clientSecret: ${jenkins-client-secret}
+      clientID: "${JENKINS_CLIENT_ID}"
+      clientSecret: "${JENKINS_CLIENT_SECRET}"
       oauthScopes: "read:org,user:email"
   # nodes:
   #   slave:
