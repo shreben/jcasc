@@ -3,13 +3,13 @@ jenkins:
   numExecutors: 5
   scmCheckoutRetryCount: 2
   mode: NORMAL
-  # securityRealm:
-  #   github:
-  #     githubWebUri: "https://github.com"
-  #     githubApiUri: "https://api.github.com"
-  #     clientID: "client-id"
-  #     clientSecret: "client-secret"
-  #     oauthScopes: "read:org,user:email"
+  securityRealm:
+    github:
+      githubWebUri: "https://github.com"
+      githubApiUri: "https://api.github.com"
+      clientID: "${jenkins-client-id}"
+      clientSecret: "${jenkins-client-secret}"
+      oauthScopes: "read:org,user:email"
   # nodes:
   #   slave:
   #     name: "static-slave"
