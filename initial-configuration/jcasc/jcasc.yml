@@ -11,7 +11,7 @@ jenkins:
       clientSecret: "${JENKINS_CLIENT_SECRET}"
       oauthScopes: "read:org,user:email"
   authorizationStrategy:
-    globalMatrix:
+    projectMatrix:
       grantedPermissions:
         - "Overall/Read:authenticated"
         - "Overall/Administer:FruitOrg*admin"
