@@ -1,3 +1,4 @@
 configuration-as-code
-job-dsl
+configuration-as-code-support
+role-strategy
 github-oauth

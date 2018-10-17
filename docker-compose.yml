@@ -1,13 +1,25 @@
-version: '3'
+version: '3.6'
 services:
   jenkins:
     build: .
-    ports:
     environment:
-      JAVA_OPTS: "-Djava.awt.headless=true"
-      CASC_JENKINS_CONFIG: "/usr/share/jenkins/ref/jenkins.yaml"
+      JAVA_OPTS: >
+          -Djava.awt.headless=true
+          -Djenkins.install.runSetupWizard=false
+      # CASC_JENKINS_CONFIG: /usr/share/jenkins/ref/jenkins.yaml
+      CASC_JENKINS_CONFIG: https://raw.githubusercontent.com/shreben/jcasc/master/initial-configuration/jcasc/jcasc.yml
+      # CASC_VAULT_URL: https://vault-tools.platform.mnscorp.net
+      # CASC_VAULT_PATH: /infrastructure/show/teams/test/test/jcasc
+      # CASC_VAULT_MOUNT: github
+      # CASC_VAULT_TOKEN:
+      JENKINS_CLIENT_ID: $JENKINS_CLIENT_ID
+      JENKINS_CLIENT_SECRET: $JENKINS_CLIENT_SECRET
     ports:
-      - "8080:8080"
+      - "8080:80"
       - "50000:50000"
     volumes:
-    - ./jenkins_home:/var/jenkins_home
+    - jenkins_data:/var/jenkins_home
+volumes:
+  jenkins_data:
+
+# -Djenkins.install.runSetupWizard=false
