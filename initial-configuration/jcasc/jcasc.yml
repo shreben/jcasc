@@ -11,22 +11,26 @@ jenkins:
       clientSecret: "${JENKINS_CLIENT_SECRET}"
       oauthScopes: "read:org,user:email"
   authorizationStrategy:
-    roleBased:
-      roles:
-        global:
-          - name: "admin"
-            description: "Jenkins administrators"
-            permissions:
-              - "Overall/Administer"
-            assignments:
-              - "FruitOrg/admin"
-          - name: "readonly"
-            description: "Read-only users"
-            permissions:
-              - "Overall/Administer"
-              - "Job/Read"
-            assignments:
-            - "authenticated"
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:authenticated"
+        - "Overall/Administer:FruitOrg*admin"
+    # roleBased:
+    #   roles:
+    #     global:
+    #       - name: "admin"
+    #         description: "Jenkins administrators"
+    #         permissions:
+    #           - "Overall/Administer"
+    #         assignments:
+    #           - "FruitOrg/admin"
+    #       - name: "readonly"
+    #         description: "Read-only users"
+    #         permissions:
+    #           - "Overall/Administer"
+    #           - "Job/Read"
+    #         assignments:
+    #         - "authenticated"
   # nodes:
   #   slave:
   #     name: "static-slave"
