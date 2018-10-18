@@ -45,6 +45,22 @@ jenkins:
 #       - name: git
 #         home: /usr/local/bin/git
 # unclassified:
+#   githubpluginconfig:
+#     configs:
+#     - name: "Github"
+#       apiUrl: "https://api.github.com"
+#       credentialsId: "[GitHubEEUser]"
+#       manageHooks: true
+credentials:
+  system:
+    domainCredentials:
+      - credentials:       
+          - string:
+              scope: GLOBAL
+              id: "github-token"
+              secret: ${GITHUB_TOKEN} #Load from Environment Variable
+              description: "Github API Token"
+# unclassified:
 #   mailer:
 #     adminAddress: admin@acme.org
 #     replyToAddress: do-not-reply@acme.org
