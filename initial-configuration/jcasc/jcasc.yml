@@ -13,8 +13,8 @@ jenkins:
   authorizationStrategy:
     projectMatrix:
       grantedPermissions:
-        - "Overall/Administer:authenticated"
-        - "Overall/Administer:FruitOrg*admin"
+        - "Overall/Read:authenticated"
+        - "Overall/Administer:shreben"
     # roleBased:
     #   roles:
     #     global:
